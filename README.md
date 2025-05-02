@@ -5,7 +5,11 @@ Wisp is a set of simple scripts for setting up small QEMU-based Virtual Machines
 # Quick Start
 
 ```console
-$ ./install.sh arch-btw-x69_420.iso urmom.qcow2
-$ ./run.sh urmom.qcow2 10022
+$ ./$ARCH/install.sh arch-btw-$ARCH.iso urmom.qcow2
+$ ./$ARCH/run.sh urmom.qcow2 10022
 $ ssh user@localhost -p10022
 ```
+
+So far `$ARCH`-s we support are:
+- [x86_64](./x86_64/)
+- [aarch64](./aarch64/)
