@@ -5,7 +5,10 @@ set -xe
 QCOW2_IMAGE="$1"
 SSH_PORT="$2"
 
-# TODO: check if the user didn't provide enough arguments
+if [ -z "$QCOW2_IMAGE" ] || [ -z "$SSH_PORT" ]; then
+    echo "Usage:\n\t$0 <path-to-qcow2-image> <ssh-port-number>"
+    exit 1
+fi
 
 qemu-system-x86_64 -enable-kvm \
                    -m 4096 \
